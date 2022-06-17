@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -36,6 +37,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     var lifecycle_version = "2.5.0-rc02"
     var roomVersion = "2.4.2"
     var nav_version = "2.4.2"
@@ -47,7 +49,7 @@ dependencies {
 
 
     implementation("androidx.room:room-runtime:$roomVersion")
-    //kapt("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
 
 
